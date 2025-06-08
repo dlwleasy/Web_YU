@@ -1,0 +1,19 @@
+<!-- fragments/nav.html -->
+<div th:fragment="header">
+  <link rel="stylesheet" href="/home/header.css">
+
+  <header>
+    <a th:href="@{/home}" class="logo">
+      <img src="/home/popcorn.png" alt="팝콘" />
+      <span>JOB STACK</span>
+    </a>
+
+
+    <nav>
+      <a th:href="@{/self1}">self - 관리</a>
+      <a href="/self2">self - 이해</a>
+      <a href="/search">search - 직무 & 기업</a>
+      <a th:href="@{/question/list}">My page</a>
+    </nav>
+  </header>
+</div>

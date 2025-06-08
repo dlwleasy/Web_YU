@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>상세페이지</title>
+    <link rel="stylesheet" href="/home/question_detail.css">
+    <link rel="stylesheet" href="/home/bubble_button.css">
+</head>
+<body>
+<h1 class="question-title" th:text="${question.subject}"></h1>
+<div class="question-content" th:text="${question.content}"></div>
+
+
+<h5 th:text="|${#lists.size(question.answerList)}개 의 답 변 이 있 습니다.|"></h5>
+
+<div>
+    <ul>
+        <li th:each="answer : ${question.answerList}" th:text="${answer.content}"></li>
+    </ul>
+</div>
+
+<form th:action="@{|/answer/create/${question.id}|}" th:object="${answerForm}"
+method="post" class="my-3">
+<div class="alert alert-danger" role="alert"th:if="${#fields.hasAnyErrors()
+}">
+<div th:each="err: ${#fields.allErrors()}" th:text="${err}" />
+</div>
+<textarea th:field="*{content}" rows="10" class="form-control"></textarea>
+    <!-- 버블 버튼 -->
+    <span class="button--bubble__container">
+    <button type="submit" class="button button--bubble">답 변 등 록</button>
+
+    <span class="button--bubble__effect-container">
+      <span class="circle top-left"></span>
+      <span class="circle top-left"></span>
+      <span class="circle top-left"></span>
+
+      <span class="button effect-button"></span>
+
+      <span class="circle bottom-right"></span>
+      <span class="circle bottom-right"></span>
+      <span class="circle bottom-right"></span>
+    </span>
+  </span>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"></script>
+<script src="/home/bubble_button.js"></script> <!-- 애니메이션 JS 별도 분리 -->
+
+</body>
+</html>

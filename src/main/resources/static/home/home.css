@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    background: linear-gradient(to bottom right, #fde2f3, #d0f0ff);
+    height: 100vh;
+    color: #333;
+}
+
+/* 헤더 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+
+
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 로고 */
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    background: linear-gradient(to right, #000000, #1063aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    background: linear-gradient(to right, #ff97e6, #94daff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+/* 네비게이션 */
+
+
+
+
+nav a {
+    text-align: center;
+    text-decoration: none;
+    margin-left: 20px;
+    color: #0099ff;
+    font-weight: 600;
+    transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease; /* transition에 opacity도 추가 */
+
+}
+
+
+
+nav a:hover {
+    transform: scale(1.1);
+    color: #0055cc;
+}
+
+/* 히어로 섹션 */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 100px);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-family: 'Impact', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.hero-content h1:hover {
+    transform: scale(1.05);
+    text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 카메라 이미지 */
+.camera {
+    height: 340px;
+    margin-right: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.camera:hover {
+    transform: scale(1.1) rotate(-5deg);
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* 서브타이틀 효과 */
+.subtitle {
+    color: #ba2222;
+    display: inline-block;
+    animation: shake-once 0.6s ease-in-out 15;
+    margin-bottom: 10px;
+}
+
+/* 흔들림 애니메이션 */
+@keyframes shake-once {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-3px); }
+    40%  { transform: translateX(3px); }
+    60%  { transform: translateX(-2px); }
+    80%  { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+}
+
+/* 본문 설명 텍스트 */
+.hero-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+/* 버튼 그룹 */
+.buttons a,
+.buttons button {
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #000;
+    padding: 9px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.buttons a:hover,
+.buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+

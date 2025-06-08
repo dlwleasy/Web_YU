@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #fde2f3, #d0f0ff); /* 핑크 → 블루 그라데이션 */
+    height: 100vh;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: #222;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #0077ff;
+    font-weight: 500;
+}
+
+
+
+.card-container {
+    max-width: 1000px;
+    margin: 40px auto; /* auto로 양 옆 가운데 정렬 */
+    display: flex;
+    flex-wrap: wrap;
+
+    row-gap: 60px;     /* 위아래 카드 간격 */
+    column-gap: 40px;  /* 좌우 카드 간격 */
+    justify-content: center; /* 💡 카드들을 가운데로 정렬 */
+}
+.card {
+    background: white;
+    border-radius: 12px; /* 둥글게 더 강조 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 그림자 강화해서 입체감 ↑ */
+    width: 28%; /* 살짝 줄여서 여백 확보 */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 부드러운 애니메이션 */
+}
+
+/* 마우스를 올리면 올라오고 그림자 진해짐 */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+
+.card-content a {
+    color: #0077ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card a {
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+/* hover 시 그라데이션 텍스트 */
+.card a:hover {
+    background-image: linear-gradient(to right, #ef14c5, #f7e3f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* 일반 color 제거 */
+}

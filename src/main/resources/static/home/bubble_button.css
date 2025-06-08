@@ -1,0 +1,99 @@
+.button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #aedbfb;
+    background-color: rgba(53, 38, 38, 0.87);
+    padding: 7px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+}
+
+.button:hover {
+    background-color: #b7e1ff;
+    color: #222;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+/* ===== 오른쪽 정렬용 컨테이너 ===== */
+.button-container {
+    text-align: right;
+}
+
+/* ===== 버블 버튼 특화 스타일 ===== */
+.button--bubble {
+    background-color: #9dd4ff;
+    color: white;
+}
+
+.button--bubble__container {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.button--bubble__effect-container {
+    position: absolute;
+    display: block;
+    width: 200%;
+    height: 400%;
+    top: -150%;
+    left: -50%;
+    filter: url("#goo");
+    pointer-events: none;
+    transition: all 0.1s ease-out;
+}
+
+.button--bubble__effect-container .circle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    background-color: #9dd4ff;
+    transition: background 0.1s ease-out;
+}
+
+.circle.top-left {
+    top: 40%;
+    left: 27%;
+}
+
+.circle.bottom-right {
+    bottom: 40%;
+    right: 27%;
+}
+
+.button--bubble:hover + .button--bubble__effect-container .circle,
+.button--bubble:hover + .button--bubble__effect-container .button {
+    background-color: #f7e3f3;
+}
+
+.button--bubble:active + .button--bubble__effect-container {
+    transform: scale(0.95);
+}
+
+/* 효과용 가짜 버튼 (애니메이션 전용) */
+.effect-button {
+    background: transparent !important;
+}
+
+/* 필터 SVG */
+.goo {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+}
+
