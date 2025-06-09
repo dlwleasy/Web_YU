@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>회원가입</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-panel {
+      width: 50%;
+      background-image: url("/home/stairs.png"); /* 계단 이미지 */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .right-panel {
+      width: 50%;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h4 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    label {
+      font-weight: 500;
+      color: #555;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 16px;
+      background-color: white;
+      border: 2px solid #007bff;
+      color: #007bff;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="left-panel"></div>
+
+<div class="right-panel">
+  <h4>회원가입</h4>
+  <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+    <div th:replace="~{form_errors :: formErrorsFragment}"></div>
+
+    <div>
+      <label for="username">사용자 ID</label>
+      <input type="text" th:field="*{username}" id="username">
+    </div>
+
+    <div>
+      <label for="password1">비밀번호</label>
+      <input type="password" th:field="*{password1}" id="password1">
+    </div>
+
+    <div>
+      <label for="password2">비밀번호 확인</label>
+      <input type="password" th:field="*{password2}" id="password2">
+    </div>
+
+    <div>
+      <label for="email">이메일</label>
+      <input type="email" th:field="*{email}" id="email">
+    </div>
+
+    <button type="submit">회원가입</button>
+  </form>
+</div>
+
+</body>
+</html>
