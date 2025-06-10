@@ -6,8 +6,10 @@
     <title>글 등록</title>
     <link rel="stylesheet" href="/home/question_form.css" />
     <link rel="stylesheet" href="/home/bubble_button.css" /> <!-- 새로 만든 버블 CSS 경로 -->
+    <link rel="stylesheet" href="/home/home.css">
 </head>
 <body>
+<div th:replace="fragments/nav :: header"></div>
 <!-- Goo 필터 정의 (꼭 있어야 효과 작동함) -->
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo">
     <defs>
@@ -19,6 +21,7 @@
         </filter>
     </defs>
 </svg>
+<div class="main-content">
 <form th:action="@{/question/create}" method="post">
 
 <div layout:fragment="content" class="container">
@@ -54,6 +57,8 @@
         </span>
       </span>
     </form>
+</div>
+
 </div>
 
 <!-- jQuery + GSAP + 애니메이션 스크립트 -->

@@ -1,8 +1,16 @@
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    background-color: #fff;
+    background-color: #f9f9f9;
     color: #333;
-    margin: 40px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 3px;
 }
 
 h1 {
