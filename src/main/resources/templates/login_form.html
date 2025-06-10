@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 - JobStack</title>
+  <th:block layout:fragment="css">
+    <style>
+      .login-container {
+        max-width: 400px;
+        margin: 3rem auto;
+        padding: 2.5rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e1e5e9;
+      }
+
+      .login-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #2c3e50;
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+
+      .alert {
+        padding: 0.75rem 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+      }
+
+      .alert-danger {
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #374151;
+        font-size: 0.95rem;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.875rem;
+        border: 2px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        box-sizing: border-box;
+        background-color: #f9fafb;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: #3b82f6;
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      }
+
+      .form-control:hover {
+        border-color: #9ca3af;
+        background-color: white;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        margin-top: 0.5rem;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      }
+
+      .btn-primary:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+      }
+
+      .login-footer {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .login-footer a {
+        color: #3b82f6;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .login-footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 480px) {
+        .login-container {
+          margin: 1rem;
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+  </th:block>
+</head>
+
+<body>
+<div layout:fragment="content">
+  <div class="login-container">
+    <h2 class="login-title">JobStack 로그인</h2>
+
+    <form th:action="@{/user/login}" method="post">
+      <div th:if="${param.error}">
+        <div class="alert alert-danger">
+          사용자ID 또는 비밀번호를 확인해주세요.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="username" class="form-label">사용자ID</label>
+        <input type="text" name="username" id="username" class="form-control"
+               placeholder="사용자ID를 입력하세요" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">비밀번호</label>
+        <input type="password" name="password" id="password" class="form-control"
+               placeholder="비밀번호를 입력하세요" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">로그인</button>
+    </form>
+
+    <div class="login-footer">
+      <a href="/user/signup">아직 계정이 없으신가요? 회원가입</a>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

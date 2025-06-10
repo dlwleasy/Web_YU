@@ -23,9 +23,15 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/h2-console/**").permitAll()  // 허용
                         .requestMatchers("/**").permitAll()             // 나머지도 허용
-                );
+                )
+                .formLogin((formLogin)-> formLogin
+                        .loginPage("/user/login")
+                        .defaultSuccessUrl("/"))
+        ;
         return http.build();
     }
+
+
 
     @Bean
     PasswordEncoder passwordEncoder() {
