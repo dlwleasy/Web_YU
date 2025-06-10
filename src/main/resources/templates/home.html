@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head> <!--브라우저가 읽을 수 있게 데이터에대한 데이터를 제공해주기-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/home/home.css">
 
 </head>
+
 <body><!--본문내용-->
 <div th:replace="fragments/nav :: header"></div>
 <main class="hero">
@@ -19,7 +21,7 @@
             모두 컨설턴트와 함께 체계적으로 취업준비를 하고 소통하며 인생의 주인공이 되어보세요!
         </p>
         <div class="buttons">
-            <a href="/login" class="bn37">  º 로그인 º</a>
+            <a th:href="@{/user/login}" class="bn37">  º 로그인 º</a>
             <a th:href="@{/user/signup}" class="signup-btn"> º 회원가입 º</a>
         </div>
     </div>

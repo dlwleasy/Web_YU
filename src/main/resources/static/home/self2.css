@@ -1,0 +1,176 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    background: linear-gradient(to bottom right, #fde2f3, #d0f0ff);
+    height: 100vh;
+    color: #333;
+}
+
+/* header */
+.main-header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #065c98;
+}
+
+.logo img {
+    width: 32px;
+    height: 32px;
+}
+
+nav a {
+    color: #0099ff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 20px;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #065c98;
+}
+
+/* 검사 카드 */
+.test-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3개씩 2줄 */
+    gap: 30px;
+    max-width: 1000px;
+    margin: 60px auto;
+}
+
+/* 카드 */
+.test-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.test-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.test-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.test-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.test-card a {
+    align-self: flex-start;
+    color: #0099ff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.test-card a:hover {
+    background-image: linear-gradient(to right, #0099ff, #065c98);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.consultant-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 60px auto;
+    max-width: 1000px;
+}
+
+.consultant-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    width: 260px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.consultant-card:hover {
+    transform: translateY(-6px);
+}
+
+.consultant-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.consultant-card h3 {
+    margin: 8px 0 4px;
+    font-size: 18px;
+    color: #222;
+}
+
+.consultant-card .position {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.consultant-info {
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.consultant-info li {
+    margin-bottom: 6px;
+}
+
+.consult-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #0099ff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.consult-btn:hover {
+    background-color: #065c98;
+}
+

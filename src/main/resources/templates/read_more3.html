@@ -1,75 +1,103 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8" />
-    <title>건강한 습관</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="templates/self1/3.css">
 
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+        <meta charset="UTF-8">
+        <title>pro vs amateur</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/home/home.css">
+        <style>
+         * {
+             box-sizing: border-box;
+             font-family: 'Noto Sans KR', sans-serif;
+             margin: 0;
+             padding: 0;
+         }
+
+
+         header p {
+             font-size: 18px;
+             opacity: 0.9;
+         }
+
+         main {
+             max-width: 900px;
+             margin: 60px auto;
+             padding: 0 20px;
+         }
+
+         section {
+             margin-bottom: 40px;
+
+
+        section.text-section {
+            flex: 2;
+            min-width: 300px;
+        }
+
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #007acc;
+        }
+
+        h4 {
+            font-size: 18px;
+            color: #007acc;
+            margin: 24px 0 12px;
+        }
+
+        p, li {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li strong {
+            color: #007acc;
+        }
+
+        blockquote {
+            background: #f4f8ff;
+            border-left: 4px solid #007acc;
+            padding: 12px 20px;
+            margin: 20px 0;
+            font-style: italic;}
+
+    </style>
 </head>
+
 <body>
-<header class="main-header">
-    <div class="logo">
-        <img src="camera-icon.png" alt="카메라 아이콘" />
-        <span>JOB STACK</span>
-    </div>
+<header>
+    <h1>Habits for happiness</h1>
+    <p>유지하려면 쉬운 데서부터! 단, 원리는 같음. 작은 것부터 기본기를 관리하는 것이 핵심.</p>
 </header>
-<div th:replace="fragments/nav :: header"></div>
 <main class="content">
     <section class="text-section">
-        <h1>Yale's 'happiness' course </h1>
-        Her "happiness" course -- which she began teaching live in 2018 -- became Yale's
-        most popular class in over 300 years, according to the university.
-        • In April 2019, Santos had 22,522 new enrollments. But in April 2020, as the pandemic
-        started to take off, the class saw 860,494 new enrollments -- and it only continued to
-        skyrocket.
-        • Santos' class focuses on understanding and letting go of all the superficial notions of
-        happiness, such as the idea that a better job, fancier house, or a new relationship is thenext step closer to happiness.
-        • "All of us want to be happier," Santos said. "The problem is that we have a lot of
-        misconceptions about what really will make us happy. We think we need to change our
-        circumstances in major ways, but often simply behavioral and mindset changes can
-        make a big difference in our sense of well-being."
-        • Some of the professor's "happiness" assignments include deleting social media
-        accounts, daily meditation, keeping a gratitude journal, and investing time in loved ones.
-        • Students also receive a series of homework "rewirements," or practices aimed at helping
-        students develop better habits, according to Santos. These include making more time
-        for exercise and sleep, engaging in more social connection and random acts of
-        kindness, taking time to savor and experience more gratitude, and mindfulness.
-        • The Science of Well-Being, Dr. Santos assigns a set of rewirements alongside the
-        regular coursework (readings, papers, tests, etc.).
-        • Her reasoning, as she describes in the class syllabus, is that "psychological science
-        shows that merely learning about the empirical findings and theories is not enough to
-        achieve real behavior change...The path to becoming happier and more successful
-        requires more than just learning the material—it involves actually putting in work to set up
-        the right habits and mindset."
-        • Her rewirement prompts, therefore, are "activities and exercises aimed at making you
-        happier, healthier, and more resilient" by "rewiring" your automatic habits and strategies.
-
-
-        <h1>건강한 습관</h1>
-        <h4>디즈니 최고경영자 로버트 아이거의 모닝루틴</h4>
-        <ul> <!--순서 있는 리스트 표현-->
-            <li>매일 오전 4시 15분 기상한다.</li>
-            <li>5분 동안 웃을 만큼 얼굴을 씻고 간단한 체육운동을 간다.</li>
-            <li>낮에도 4시 30분에는 일상복보다 몸과 잘 맞는 바지 플러머에 가볍게 음악 40분간 스트레칭과 웨이트 트레이닝을 한다.</li>
-            <li>운동이 끝나면 자기계발을 겸해 스마트폰을 보지 않는 것이 철칙</li>
-            <li>운동이 끝난 후 샤워를 하고 커피를 마신다.</li>
-            <li>그 후 신문을 읽고, 이메일을 확인하고, 인터넷 서핑 등을 한다.</li>
-            <li>그리고 오전 6시 45분에 사무실에 도착한다.</li>
+        <h1>Yale's 'happiness' course</h1>
+        <p>Her "happiness" course — which she began teaching live in 2018 — became Yale's most popular class in over 300 years.</p>
+        <ul>
+            <li>2020년 팬데믹 초기, 등록자 수는 86만 명을 넘었다.</li>
+            <li>행복의 조건은 외부가 아니라 내부: 집, 연봉, 관계가 아니라 습관과 인식 변화.</li>
+            <li>과제로는 SNS 삭제, 명상, 감사 일기, 가족과 시간 보내기 등이 포함된다.</li>
+            <li>운동, 수면, 사회적 연결, 감사 표현 등 행동 변화에 초점을 둔다.</li>
+            <li><strong>"행동을 바꿔야 진짜 변화가 일어난다"</strong>는 전제 하에 수업 구성.</li>
         </ul>
 
-        <h4>나의 체력목표를 높이는 4가지 방법</h4>
-        <ol><!--순서 없는 리스트 표현-->
-            <li>충분한 수면: 하루 일정의 3분의 1정도 잠을 자기. 수면적자 등의 적당한 운동을 실현하면 뇌와 몸에 좋다.</li>
-            <li>활발한 생활: 빠른 리듬을 통해 하루에 5분이라도 몸을 쓰고 지식을 자극하면 뇌기능에도 도움이 된다.</li>
-            <li>신체 자극과 환경 자극: 활발한 활동 후에는 충분한 휴식을 주며, 소풍하면서 다른 환경을 경험하면 뇌에 좋은 자극을 준다.</li>
-            <li>운동과 공부의 조화: 지식을 쌓고 행동으로 연결하는 습관이 건강한 삶을 이끈다.</li>
-        </ol>
+        <blockquote>“지식만으로는 행복해지지 않는다. 행동이 필요하다.”</blockquote>
+        <h1>건강한 습관</h1>
+        <h4>디즈니 CEO 로버트 아이거의 모닝 루틴</h4>
+        <ul>
+            <li>매일 4시 15분 기상</li>
+            <li>운동과 스트레칭, 자기계발 시간 확보</li>
+            <li>스마트폰은 운동 끝나고 나서 사용</li>
+        </ul>
     </section>
-
-    <aside class="image-section">
-        <img src="healthy-habits.png" alt="건강한 습관 이미지 콜라주" />
-    </aside>
 </main>
 </body>
 </html>

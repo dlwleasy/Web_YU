@@ -7,19 +7,7 @@
   <link rel="stylesheet" href="/home/self1.css">
 </head>
 
-
-
 <body>
-<!-- 헤더 영역 -->
-<header>
-  <div class="logo">
-    <img src="/home/camera.png" alt="카메라 아이콘" />
-    <span>JOB STACK</span>
-  </div>
-
-</header>
-
-
 <div th:replace="fragments/nav :: header"></div>
 <!-- 본문 영역 -->
 <main class="card-container">
@@ -29,7 +17,8 @@
       <div class="card-content">
         <h3>스스로 선택하는 과정 </h3>
         <p>"작고 쉬운 목표로 확실하게 그 과정을 점검해 성공의 실마리를 잡을 수 있습니다.”<br>— James Clear</p>
-        <a href="#">read more ></a>
+        <a th:href="@{/readmore1}">read more ></a>
+
       </div>
     </div>
 
@@ -38,7 +27,7 @@
       <div class="card-content">
         <h3>pro vs amateur</h3>
         <p>작/은 습관의 반복 속에서 개인의 프로와 아마추어의 차이는 점점 벌어집니다.<p>
-        <a href="#">read more ></a>
+        <a th:href="@{/readmore2}">read more ></a>
       </div>
     </div>
 
@@ -47,7 +36,7 @@
       <div class="card-content">
         <h3>행복을 위한 건강한 습관</h3>
         <p>유지하려면 쉬운 데서부터! 단, 원리는 같음. 작은 것부터 기본기를 관리하는 것이 핵심.</p>
-        <a href="read_more3.html">read more ></a>
+        <a th:href="@{/readmore3}">read more ></a>
 
       </div>
     </div>

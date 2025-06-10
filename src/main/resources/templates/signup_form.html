@@ -1,112 +1,53 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
-  <meta charset="UTF-8">
-  <title>회원가입</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-
-    body {
-      margin: 0;
-      display: flex;
-      height: 100vh;
-    }
-
-    .left-panel {
-      width: 50%;
-      background-image: url("/home/stairs.png"); /* 계단 이미지 */
-      background-size: cover;
-      background-position: center;
-    }
-
-    .right-panel {
-      width: 50%;
-      padding: 60px 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    h4 {
-      font-size: 24px;
-      margin-bottom: 30px;
-      color: #333;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    label {
-      font-weight: 500;
-      color: #555;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px 14px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    button {
-      padding: 12px;
-      font-size: 16px;
-      background-color: white;
-      border: 2px solid #007bff;
-      color: #007bff;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #007bff;
-      color: white;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 - JobStack</title>
+    <th:block layout:fragment="css">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/signup.css}">
+    </th:block>
 </head>
 <body>
+    <div layout:fragment="content">
+        <div class="signup-page">
+            <div class="signup-image"></div>
+            <div class="signup-content">
+                <div class="signup-container">
+                    <h1 class="signup-title">회원가입</h1>
+                    <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+                        <div th:if="${#fields.hasAnyErrors()}">
+                            <div th:each="err : ${#fields.allErrors()}" th:text="${err}" class="alert alert-danger"></div>
+                        </div>
 
-<div class="left-panel"></div>
+                        <div class="form-group">
+                            <label for="username" class="form-label">사용자ID</label>
+                            <input type="text" id="username" th:field="*{username}" class="form-input">
+                        </div>
 
-<div class="right-panel">
-  <h4>회원가입</h4>
-  <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
-    <div th:replace="~{form_errors :: formErrorsFragment}"></div>
+                        <div class="form-group">
+                            <label for="password1" class="form-label">비밀번호</label>
+                            <input type="password" id="password1" th:field="*{password1}" class="form-input">
+                        </div>
 
-    <div>
-      <label for="username">사용자 ID</label>
-      <input type="text" th:field="*{username}" id="username">
+                        <div class="form-group">
+                            <label for="password2" class="form-label">비밀번호 확인</label>
+                            <input type="password" id="password2" th:field="*{password2}" class="form-input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">이메일</label>
+                            <input type="email" id="email" th:field="*{email}" class="form-input">
+                        </div>
+
+                        <button type="submit" class="submit-button">회원가입</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div>
-      <label for="password1">비밀번호</label>
-      <input type="password" th:field="*{password1}" id="password1">
-    </div>
-
-    <div>
-      <label for="password2">비밀번호 확인</label>
-      <input type="password" th:field="*{password2}" id="password2">
-    </div>
-
-    <div>
-      <label for="email">이메일</label>
-      <input type="email" th:field="*{email}" id="email">
-    </div>
-
-    <button type="submit">회원가입</button>
-  </form>
-</div>
-
 </body>
 </html>
