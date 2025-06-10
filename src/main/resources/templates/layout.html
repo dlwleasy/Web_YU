@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobStack</title>
+    <!-- 공통 스타일시트 -->
+    <link rel="stylesheet" href="/home/home.css">
+    <!-- 페이지별 추가 스타일시트 -->
+    <th:block layout:fragment="css"></th:block>
+</head>
+<body>
+    <!-- 네비게이션 헤더 -->
+    <div th:replace="fragments/nav :: header"></div>
+    
+    <!-- 메인 콘텐츠 -->
+    <div layout:fragment="content"></div>
+</body>
+</html> 
