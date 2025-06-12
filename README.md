@@ -37,7 +37,7 @@ JobStack은 취업 준비생을 위한 종합 진로 관리 플랫폼입니다. 
 이 외에 문제가 발생하여 실행이 안될경우 dlwleasy1@gmail.com 으로 연락주세요.
 실행이 안된다면 실행결과를 참고해주세요!! :) 
 ```
-[실행결과](https://youtu.be/mavMFM75pO8?si=qKTfenF1Tf2Yl3lT)
+
 
 
 
